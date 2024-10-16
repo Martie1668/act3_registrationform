@@ -28,7 +28,7 @@
         <p><label for="statusinlife">statusinlife</label> <input type="text" name="statusinlife"></p>
         <p><label for="experience">experience</label> <input type="text" name="experience"></p>
         <p><label for="age">Age</label> <input type="number" name="age"></p>
-            <input type="SUBMIT" name="register" >
+            <input type="SUBMIT" name="insertnewbtn" >
         </p>
     </form> 
     <table style="border: 2px solid black">
