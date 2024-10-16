@@ -4,8 +4,8 @@ require_once 'dbConfig.php';
 function insertIntoform ($pdo, $user_name,$firstname,$lastname, $profession,
 $statusinlife,$experience,$age) {
 
-    $sql = "INSERT INTO nominee (user_name,firstname,Last_name, profession,
-statusinlife,experience,Age) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO nominee (username,firstname,lastname, profession,
+statusinlife,experience,age) VALUES (?,?,?,?,?,?,?)";
 
     $stmt = $pdo->prepare($sql);
 
@@ -19,10 +19,11 @@ statusinlife,experience,Age) VALUES (?,?,?,?,?,?,?)";
 
 
 function getuserbyID($pdo, $userID) {
-    $stmt = $pdo->prepare("SELECT * FROM nominee WHERE userID = :userID");
-    $stmt->bindParam(':userID', $userID);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+	$sql = "SELECT * FROM nominee WHERE userID = ?";
+	$stmt = $pdo->prepare($sql);
+	if ($stmt->execute([$userID])) {
+		return $stmt->fetch();
+	}
 }
 
 
@@ -33,6 +34,7 @@ function seeAlluserRecords ($pdo){
     if ($executeQuery){
         return $stmt ->fetchAll();
     }
+}
 
 function update_employee($pdo, $userID, $username, $firstname, $lastname, 
 	$profession, $statusinlife, $experience, $age) {
@@ -69,5 +71,5 @@ function Delete_employee($pdo, $userID) {
 	}
 
 }
-}
+
 ?>
