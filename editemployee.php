@@ -29,11 +29,11 @@
 		</p>
 		<p>
 			<label for="firstname">First name: </label> 
-			<input type="text" name="Firstname" value="<?php echo $getuserbyID['firstname']; ?>">
+			<input type="text" name="firstname" value="<?php echo $getuserbyID['firstname']; ?>">
 		</p>
 		<p>
 			<label for="lastname">Last name: </label>
-			<input type="text" name="Lastname" value="<?php echo $getuserbyID['lastname']; ?>">
+			<input type="text" name="lastname" value="<?php echo $getuserbyID['lastname']; ?>">
 		</p>
 		<p>
 			<label for="profession">Profession: </label>
